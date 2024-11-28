@@ -1,0 +1,167 @@
+/* General Styles */
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fef6e4; /* Light beige background */
+    background-size: cover;
+    background-attachment: fixed;
+    animation: paw-prints 15s linear infinite; /* Cat-themed background animation */
+    color: #333; /* Default text color */
+    overflow-y: scroll; /* Ensure vertical scrollbar is always visible */
+    overflow-x: auto; /* Allows horizontal scrolling if necessary */
+}
+
+/* Header */
+h1 {
+    text-align: center;
+    padding: 30px 0;
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #ff6347; /* Cat-themed color */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    animation: bounceIn 1s ease-out; /* Adding a bounce animation to the header */
+}
+
+/* Gallery Grid */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+/* Card Styles */
+.image-wrapper {
+    width: 100%;
+    max-width: 350px; /* Slightly larger cards */
+    height: 350px; /* Fixing height for consistency */
+    background: #fff;
+    border-radius: 20px; /* Smoother rounded corners */
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+    background-color: #fff8f0; /* Soft background color */
+    border: 3px solid #ffcccb; /* Cat-themed border */
+    position: relative; /* To allow for paw print animation on hover */
+}
+
+/* Hover effect for card with animation */
+.image-wrapper:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+    animation: paw-effect 1s ease-out; /* Animation when hovered */
+}
+
+/* Image inside the card */
+.image-wrapper img {
+    width: 100%;
+    height: 75%; /* Make the image take up 75% of the card's height */
+    object-fit: cover; /* Ensures the image covers the area without stretching */
+    border-bottom: 4px solid #ffcccb; /* Soft border for the image */
+}
+
+/* Card Caption */
+.caption {
+    padding: 15px 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #444;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: #ffefdb; /* Soft background for the caption */
+    border-top: 2px solid #ffcccb; /* Light border above the caption */
+    width: 100%;
+    animation: fadeIn 2s ease-in-out; /* Fade-in effect for captions */
+}
+
+/* Animations */
+@keyframes paw-prints {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes paw-effect {
+    0% {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    100% {
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4); /* Larger shadow */
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 2.5rem; /* Smaller header font size for tablets */
+    }
+
+    .gallery {
+        gap: 20px;
+    }
+
+    .image-wrapper {
+        max-width: 45%; /* Two cards per row */
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .image-wrapper {
+        max-width: 90%; /* Cards take up more space on smaller screens */
+    }
+
+    h1 {
+        font-size: 2.2rem; /* Smaller header font size on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .image-wrapper {
+        max-width: 100%; /* Full width on very small screens */
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Even smaller header font size */
+    }
+}
